@@ -1,0 +1,124 @@
+<ion-view title="Health">
+    <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+  <ion-floating-menu  ng-click="openPop()">
+</ion-floating-menu>
+     
+<ion-content ng-class="{expanded:isExpanded}" class="has-header" style="background-color:#FAFCFA"><div class="overlap-header"> Nominie: {{ proposerDetails.toInsure }} | Age: {{ proposerDetails.age }} | Gender: {{ proposerDetails.gender === 'M' ? 'Male' : 'Female' }}
+            <button class="half-out-button" ui-sref="app.GenInfo"> <i class="ion-edit"> </i> </button>
+        </div><br>&nbsp;<span ng-show="productList.length > 0"> Displaying {{ filteredData.length }} plans. </span><br>
+        <script id="templates/custom.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive" style="background-color:#24385c;">
+          <h1 class="title">Customise</h1>
+          <button class="button button-clear button-primary" ng-click="modalCust.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <div style="margin-left:40px">
+                <div class="row center" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Sum Insured</span> </div>
+                <div class="row center">
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select ng-model="filterDetails.sumInsured" >
+                            <option>Select</option>
+                            <option>2,00,000 - 2,50,000</option>
+                            <option>3,00,000 - 3,50,000</option>
+                            <option>4,00,000 - 4,50,000</option>
+                            <option>5,00,000 - 5,50,000</option>
+                            <option>6,00,000 - 6,50,000</option>
+                        </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+                <br />
+              
+         
+              
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> People Included </span> </div>
+                   <div class="row">
+                               <div>
+            <input id="radio-1" ng-model="filterDetails.peopleIncluded" value="All" class="radio-custom" name="radio-group" type="radio">
+            <label for="radio-1" class="radio-custom-label" style="font-size:17px; color:#536992">All</label>
+        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+            <input id="radio-2" ng-model="filterDetails.peopleIncluded" value="Yourself Only" class="radio-custom"name="radio-group" type="radio">
+            <label for="radio-2" class="radio-custom-label" style="font-size:17px; color:#536992">Yourself Only</label>
+        </div>
+        </div>
+                <br />
+                
+               <br />
+            
+         
+              
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Insurers </span> </div>
+                  
+                               <div  ng-repeat="item in insuranceProviderList">
+                                   <div class="row">
+            <input id="check-{{$index}}" ng-model="filterDetails.insurers[$index].value" class="checkbox-custom"  type="checkbox" ng-change="showSelected();">
+            <label for="check-{{$index}}" class="checkbox-custom-label" style="font-size:17px; color:#536992"> {{ item }} </label>
+        </div> 
+        </div>
+            
+       
+        </div>
+                <br />
+        
+       
+       
+                <br />
+               <div class="row center" style="float:none;width:100%"> 
+                   <button class="button button-full button-positive" style="background-color:#24385c;" ng-click="filterData();"><i class="fa fa-refresh"></i>&nbsp; Update Quote</button></div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+        <p>
+        <div class="errortab" ng-show="productList.length === 0">Sorry, there are no quotes currently available</div>
+        <div class="list card" ng-repeat="item in productList | insuranceFilter : displayList : 'insuranceProviderId' as filteredData" >
+<!--            ng-click="goToQuoteDetails($index)"-->
+            <div class="item item-avatar" style="background-color:#ECEFEE;padding-bottom:0">
+                <img class="prod-image" ng-show="item.insuranceProviderId === 'BHARTIAXA_GENERAL'" src="https://www.symboinsurance.com/images/BhartiAxa.png" style="position: absolute;
+    top: 25px;"/>
+                <img class="prod-image" ng-show="item.insuranceProviderId === 'HDFC_ERGO'" src="https://www.symboinsurance.com/images/HDFCErgo.png" style="position: absolute;
+    top: 25px;"/>
+                <img class="prod-image" ng-show="item.insuranceProviderId === 'RELIGARE_HEALTH'" src="https://www.symboinsurance.com/images/ReligareHealth.png" style="position: absolute;
+    top: 25px;"/>
+                <img class="prod-image" ng-show="item.insuranceProviderId === 'RELIANCE_GENERAL'" src="https://www.symboinsurance.com/images/RelianceGeneral.png" style="position: absolute;
+    top: 25px;"/>
+                <img class="prod-image" ng-show="item.insuranceProviderId === 'STARHEALTH'" src="https://www.symboinsurance.com/images/StarHealth.png" style="position: absolute;
+    top: 25px;"/>
+                <h2>{{ item.plan.planName }}</h2><hr width="50%"/>
+                
+                
+                <div class="row" style="font-size: smaller;">
+                    <div class="col">
+                       Cashless Hospitals:
+                    <span ng-click="openhospilist(item.providers)"> {{item.providers.length}}</span>
+                    </div>
+                   
+                    <div class="col">
+                        Co-pay:
+                          {{ item.plan.copayDescription }}
+                    </div>
+                </div>
+             
+            </div>
+            <div class="button-bar">
+                <a class="button item-text-wrap whiteFont" style="background-color:#24385C; line-height:120%"  ng-click="goToQuoteDetails($index)">Coverage<br />  {{ item.sumInsured }}</a>
+                <a class="button whiteFont" style="background-color:#24385C; line-height:120%"  ng-click="goToQuoteDetails($index)">Buy Now<br /> {{ item.totalAmount.amountValue }} </a>
+            </div>
+            
+        </div>
+            <!-- Do not delete below button it fixes some UI issue -->
+            <!--<button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>-->
+            <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+</ion-view>
+<!-- 
+to install float menu 
+https://github.com/pregiotek/ion-floating-menu
+-->

@@ -1,0 +1,72 @@
+<ion-side-menus>
+
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-clear "><i class="icon ion-ios-arrow-back"></i><p></p></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+    <style>
+       /*.item-avatar .avtrImg  {     
+            width:100% !important;  
+            height : 150% !important;  
+            max-width: 100px !important;  
+            max-height: 100px !important;  
+        }*/
+        .menuitem{
+            
+            background-color:#24385c; color:#fff;font-size:25px"
+        }
+    </style>
+    <ion-side-menu side="left" style="background-color:#24385c;" color:#fff>
+        <header class="bar bar-header bar-stable">
+            <h1 class="title">Symbo</h1>
+        </header>
+        <ion-content class="has-header">
+            <div >
+            <div style="background-color:#24385c; color:#fff;font-size:25px;">
+               <center>
+                   <h2 style="background-color:#24385c; color:#fff;font-size:25px;">Dealer {{ agentDetails.username}}</h2>
+                   <p style="background-color:#24385c; color:#fff;font-size:15px;">Agent</p></center>
+            </div>
+            <ion-list>
+                 <ion-item class="menuitem" nav-clear menu-close ng-click="redirect('app.dashboard')" style="background-color:#24385c; color:#fff;font-size:25px;text-align:left">
+                    <i class="fa fa-dashboard" style="color:#fff"></i>&nbsp;&nbsp; Dashboard
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="redirect('app.leadentry')" style="background-color:#24385c; color:#fff; font-size:25px;text-align:left">
+                    <i class="fa fa-folder-open-o " style="color:#fff"></i>&nbsp;&nbsp; Cases
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="redirect('app.leadentry')" style="background-color:#24385c; color:#fff;font-size:25px;text-align:left" >
+                    <i class="fa  fa-car" style="color:#fff"></i>&nbsp;&nbsp; Car
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="redirect('app.leadentry')" style="background-color:#24385c; color:#fff;font-size:25px;text-align:left" >
+                    <i class="fa fa-bicycle" style="color:#fff"></i>&nbsp;&nbsp; Two Wheeler
+                </ion-item> <ion-item nav-clear menu-close ng-click="goToGenInfo();" style="background-color:#24385c; color:#fff;font-size:25px;text-align:left" >
+                    <i class="fa  fa-heart" style="color:#fff"></i>&nbsp;&nbsp; Health
+                </ion-item>
+                  
+                <!-- <ion-item nav-clear menu-close ng-click="redirect('app.searchlead')" ng-if="isloggedin">
+                    <i class="fa fa-search" style="color:chocolate"></i>&nbsp;&nbsp; Search Lead
+                </ion-item>
+                 <ion-item nav-clear menu-close ng-click="redirect('app.searchLeadCBS')" ng-if="isloggedin">
+                    <i class="fa fa-search-plus" style="color:chocolate"></i>&nbsp;&nbsp; Search LOS Lead
+                </ion-item>
+                 <ion-item nav-clear menu-close ng-click="redirect('app.emplist')" ng-if="isloggedin">
+                   <i class="fa fa-map-marker" style="color:chocolate"></i>&nbsp;&nbsp;Track Employeee
+                </ion-item>
+
+                <ion-item nav-clear menu-close ng-click="login()" ng-if="!isloggedin">
+                    <i class="icon ion-log-in"></i> &nbsp;&nbsp; Login
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="logout()" ng-if="isloggedin">
+                    <i class="icon ion-log-in"></i> &nbsp;&nbsp; Logout
+                </ion-item>-->
+                <!--<ion-item nav-clear menu-close ng-click="show()">
+                    <i class="icon ion-arrow-swap"></i> Action Sheet
+                </ion-item>-->
+                
+            </ion-list>
+                </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

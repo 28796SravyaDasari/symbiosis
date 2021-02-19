@@ -1,0 +1,93 @@
+<ion-view title="Quote Details">
+    <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+        <ion-content ng-class="{expanded:isExpanded}" class="has-header" style="background-color:#FAFCFA">
+            
+            
+             <center>
+             <img class="quotedetimg" ng-show="quoteDetails.insuranceProviderId === 'BHARTIAXA_GENERAL'" src="https://www.symboinsurance.com/images/BhartiAxa.png" />
+             <img class="quotedetimg" ng-show="quoteDetails.insuranceProviderId === 'HDFC_ERGO'" src="https://www.symboinsurance.com/images/HDFCErgo.png" />
+             <img class="quotedetimg" ng-show="quoteDetails.insuranceProviderId === 'RELIGARE_HEALTH'" src="https://www.symboinsurance.com/images/ReligareHealth.png" />
+             <img class="quotedetimg" ng-show="quoteDetails.insuranceProviderId === 'RELIANCE_GENERAL'" src="https://www.symboinsurance.com/images/RelianceGeneral.png" />
+             <img class="quotedetimg" ng-show="quoteDetails.insuranceProviderId === 'STARHEALTH'" src="https://www.symboinsurance.com/images/StarHealth.png" />
+             <center style="color:#28345c; font-size:22px"> {{ quoteDetails.plan.planName }} </center>
+            <hr style="width:70%"/>
+            <center style="color:#9F9F9F; font-size:22px">Annual Premium</center><br />
+            <center style="font-size:22px"><i class="fa fa-rupee"></i>{{ quoteDetails.totalAmount.amountValue }} </center>
+
+      
+           
+          	<tab-slide-box ng-init='loadQuote()' active-slide="myActiveSlide">
+			    	<div class="tsb-icons" style="background-color:#FAFCFA">
+			    		<div class="tsb-ic-wrp">
+							<ion-scroll direction="x" class="tsb-hscroll">
+								<a href="javascript:;" style="font-size:18px" class="{{tab.icon}}" ng-repeat="tab in tabs" on-finish-render="test()">{{tab.text}}</a>
+                                <hr style="opacity:0.4"/>
+                                
+							</ion-scroll>
+                            
+						</div>
+			    	</div>
+			        <ion-slide-box active-slide="1" show-pager="false" on-slide-changed="slideHasChanged($index)">
+			            <ion-slide>
+                           
+			                <div class="row" ng-repeat="item in quoteDetails.plan.planBenefitCategories.commonFeatures">
+                                <div class="col col-75 leftle">
+                                    {{ item.benefitName }}
+                                </div>
+                                 <div class="col" style="color:#28345c">
+                                     {{ item.benefitIncluded ? 'Yes' : 'No' }}
+                                </div>
+			                </div>
+
+			            </ion-slide>
+			            <ion-slide>
+			            <div class="bg-grey-006">
+                            <div class="clearfix" ng-class="{'bg-grey-005' : $index%2 === 0}" ng-repeat="item in quoteDetails.plan.preExistingExclusions">
+                                <div class="col col-12 sm-col-12 leftle">
+                                    <div class="px3 md-px4 py2">
+                                       <i class="fa fa-angle-right"></i> {{ item.description }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+			            </ion-slide>
+			            <ion-slide>
+
+                            <h3>
+                                <div class="row fontset"  ng-repeat="item in quoteDetails.plan.planBenefitCategories.renewalBenifits">
+                                    <div class="col col-75 leftle" >
+                                        {{ item.benefitName }}
+                                    </div>
+                                    <div class="col" style="color:#28345c">
+                                        {{ item.benefitIncluded ? 'Yes' : 'No' }}
+                                    </div>
+                                </div>
+                            </h3>
+			            </ion-slide>
+						<ion-slide>
+			            <div class="bg-grey-006">
+                            <div class="clearfix" ng-class="{'bg-grey-005' : $index%2 === 0}" ng-repeat="item in quoteDetails.plan.importantTerms">
+                                <div class="col col-12 sm-col-12 leftle">
+                                    <div class="px3 md-px4 py2">
+                                      <i class="fa fa-angle-right"></i>   {{ item.value }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        </ion-slide>
+			            
+			        </ion-slide-box>
+                 </tab-slide-box></center>
+            <br>
+            <br>
+        </ion-content>
+        <div class="bar bar-footer ">
+            <div class="button-bar">
+                <a class="button item-text-wrap whiteFont" style="border: none; background-color:#284373 ;"  ng-click="openpdf(quoteDetails)">Policy Wording</a>
+                <a class="button whiteFont" ng-click="buyNow();" style="border: none; background-color:#24385C ; line-height:3">Buy Now <i class="fa fa-angle-right nextIconForFooter" ></i></a>
+            </div>
+        </div>
+      </ion-view>

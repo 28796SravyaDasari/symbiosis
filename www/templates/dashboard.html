@@ -1,0 +1,85 @@
+<ion-view title="Dashboard">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    
+    <ion-content class="has-header" overflow-scroll="true" center style="background-color:#FAFCFA">
+        <p>
+            
+            <div class="geninfodiv"><form name="genralinfo">
+                <div class="row center" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Agent</span> </div>
+                <div class="row center" style="margin-bottom:14px;margin-left:0px">
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select ng-model="filterData.agent" ng-options="item.name for item in agents track by item.value">
+                        </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+             
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> From</span> </div>
+                <div class="row">
+                     <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerFromCallback" style="width : 100%">
+                    <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
+                    <input type="text" ng-model="filterData.from_date" class="datefield" ng-disabled="true" placeholder="From" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div><br />
+                </ionic-datepicker>
+<!--                    <input type="text" placeholder="Pincode" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA" ng-model="genInfo.pinCode"> </div>-->
+               
+                
+                    <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> To</span> </div>
+                    <div class="row">
+                              
+         <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerToCallback" style="width : 100%">
+                    <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
+                    <input type="text" ng-model="filterData.to_date" class="datefield" ng-disabled="true" placeholder="From" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> <br />
+                </ionic-datepicker>
+                </div>
+        
+       
+         
+<!--                        <input type="text" placeholder="Pincode" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div><br />-->
+                <center> <div class="row center" style="margin-left:25%" > <button ng-click="getInsuranceData();" class="btnupdate">Update</button></div></center>
+                    
+                
+            </div>
+                </form>
+                <div class="card" ng-show="isListRefreshed">
+  <div class="item item-divider">
+<h1 style="font-size:20px;font-family: 'Lato', sans-serif;margin-left:-4px" class="col center blue item-text-wrap">Health Insureance</h1>
+  </div>
+  <div class="item item-text-wrap" style="background-color:#ecefee; color:#536992">
+ <div class="row">
+     <div class="col" ng-click="goToPolicies();">Total Policies</div>
+     <div class="col">Total Premium</div>
+      
+      </div> <div class="row" style="font-weight: bold;">
+          <div class="col">{{ insuranceList.length }}</div>
+     <div class="col">400000</div>
+      
+      </div><hr>
+       <div class="row">
+     <div class="col">Total commision</div>
+     <div class="col">Total payout</div>
+      
+      </div> <div class="row" style="font-weight: bold;">
+     <div class="col">25%</div>
+     <div class="col">4000000</div>
+      
+      </div>
+  </div>
+  
+</div>
+
+            <!-- Do not delete below button it fixes some UI issue -->
+            <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+            <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    
+<!--
+    <div class="bar bar-footer" ng-click="next();">
+        <div class="title whiteFont">Next <i class="fa fa-angle-right nextIconForFooter"></i></div>
+    </div>
+-->
+</ion-view>

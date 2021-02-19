@@ -1,0 +1,54 @@
+{
+  "name": "ngletteravatar",
+  "version": "4.0.2",
+  "description": "directive for the letter avatar for the given string like gmail, first letter of the given data will be the avatar",
+  "main": "ngletteravatar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uttesh/ngletteravatar.git"
+  },
+  "keywords": [
+    "ngletteravatar",
+    "letter",
+    "avatart",
+    "gmail",
+    "like",
+    "letter"
+  ],
+  "author": {
+    "name": "Uttesh Kumar T.H."
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uttesh/ngletteravatar/issues"
+  },
+  "homepage": "https://github.com/uttesh/ngletteravatar#readme",
+  "_id": "ngletteravatar@4.0.2",
+  "_shasum": "814377a435a7640b6e240c45742f679f574018f5",
+  "_from": "ngletteravatar@latest",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "uttesh",
+    "email": "uttesh@gmail.com"
+  },
+  "dist": {
+    "shasum": "814377a435a7640b6e240c45742f679f574018f5",
+    "tarball": "https://registry.npmjs.org/ngletteravatar/-/ngletteravatar-4.0.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "uttesh",
+      "email": "uttesh@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ngletteravatar-4.0.2.tgz_1461225443413_0.7505075267981738"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ngletteravatar/-/ngletteravatar-4.0.2.tgz"
+}

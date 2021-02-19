@@ -1,0 +1,130 @@
+<ion-view title="Quote Details">
+    <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+        <ion-content ng-class="{expanded:isExpanded}" class="has-header" style="background-color:#FAFCFA">
+            
+<div class="overlap-header-nom" style="font-size:12px"> 
+            <div class="leftfloat" >
+          <span class="imagetoppart">
+                   <img class="prod-imagein" width="122px" height="150px" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'BHARTIAXA_GENERAL'" src="https://www.symboinsurance.com/images/BhartiAxa.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'HDFC_ERGO'" src="https://www.symboinsurance.com/images/HDFCErgo.png" />
+                <img class="prod-imageine" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'RELIGARE_HEALTH'" src="https://www.symboinsurance.com/images/ReligareHealth.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'RELIANCE_GENERAL'" src="https://www.symboinsurance.com/images/RelianceGeneral.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'STARHEALTH'" src="https://www.symboinsurance.com/images/StarHealth.png" />
+                </span>
+            
+            </div>
+            
+            <div  style="float:left;font-size: 12px;">
+                <span><b> Coverage</b><br><i class="fa fa-inr" aria-hidden="true"></i> {{quoteData.sumInsured}}</span><br>
+                <span><b>Covered Members</b></span><br>
+                <span>{{quoteData.coveredMembers.length}}</span>
+            </div>
+            <div  style="top2part">
+                <span><b> Annual Premium</b><br><i class="fa fa-inr"></i> {{quoteData.totalAmount.amount}}</span><br>
+                <span><b>Policy Period</b></span><br>
+                
+                <span>1 year</span><br>
+            </div>
+            </div>
+            <h1 style="font-size:20px;font-family: 'Lato', sans-serif;">SUMMARY</h1>
+          	<tab-slide-box>
+			    	<div class="tsb-icons" style="background-color:#FAFCFA">
+			    		<div class="tsb-ic-wrp">
+							<ion-scroll direction="x" class="tsb-hscroll">
+								<a href="javascript:;" style="font-size:18px" class="{{tab.icon}}" ng-repeat="tab in tabs" on-finish-render="test()">{{tab.text}}</a>
+                                <hr style="opacity:0.4"/>
+							</ion-scroll>
+                            
+						</div>
+			    	</div>
+			        <ion-slide-box active-slide="1" style="height:50%" show-pager="false" on-slide-changed="slideHasChanged($index)">
+			            <ion-slide>
+                            <style>
+                                .leftle {
+                                    text-align: left;
+                                }
+                                </style>
+                            <center>
+			                <div class="row">
+                            <div class="col col-50 smallFontColor"> <b> First Name</b> </div>
+                            <div class="col col-50 smallFontColor"> <b> Last Name</b> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-50 smallFont"> {{ proposerInfo[0].firstName }} </div>
+                            <div class="col col-50 smallFont"> {{ proposerInfo[0].lastName }} </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-50 smallFontColor"> <b>  Birth Date</b> </div>
+                            <div class="col col-50 smallFontColor"> <b>    Gender</b> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-50 smallFont"> {{ proposerInfo[0].dob }} </div>
+                            <div class="col col-50 smallFont"> {{ genInfo.gender === 'M'? 'Male' : 'Female' }} </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-50 smallFontColor"> <b> Email Address</b> </div>
+                            <div class="col col-50 smallFontColor"> <b>  Mobile Number</b> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-50 smallFont"> {{ genInfo.email }} </div>
+                            <div class="col col-50 smallFont"> {{ genInfo.phone }} </div>
+                        </div>
+                            </center>
+                            <br>
+                               <button class="btnupdate" ui-sref="app.GenInfo">Edit</button>
+
+			            </ion-slide>
+                         <ion-slide>
+			            <div class="bg-grey-006">
+                            <div class="clearfix" ng-class="{'bg-grey-005' : $index%2 === 0}" ng-repeat="item in proposerInfo">
+                                <div class="col col-12 sm-col-12">
+                                   <div class="px3 md-px4 py2">
+                                    <h3> <b>    {{ item.firstName }}</b>
+                                           <b>  {{ item.lastName }}</b><br></h3> <b> {{ item.dob }}</b>
+                                    <br> <b>     {{ item.height }} cm,</b> <b>     {{ item.weight }} Kg </b>
+                                    <br> <b>     {{ item.occupation }} </b> </div>
+                                </div>
+                            </div>
+                        </div>
+			            </ion-slide> <ion-slide>
+			            <div class="bg-grey-006">
+                            <div class="clearfix" ng-class="{'bg-grey-005' : $index%2 === 0}" ng-repeat="item in nomineeInfo">
+                                <div class="col col-12 sm-col-12">
+                                  <div class="px3 md-px4 py2">
+                                    <h3> {{ item.firstName }}
+                                           {{ item.lastName }}</h3> <b>{{ item.relationship }}</b> </div>
+                                </div>
+                            </div>
+                        </div>
+			            </ion-slide>
+			     
+			            
+			        </ion-slide-box>
+          	</tab-slide-box>
+         
+                            
+                            <br>
+                           
+                            <hr>
+                               
+                   <div class="row center">
+                               <div>
+            <input id="check-1" ng-model="genInfo.insurer2" value="M" class="checkbox-custom"  type="checkbox">
+            <label for="check-1" class="checkbox-custom-label" style="font-size:17px; color:#536992">I have read and agree to the Terms & Condition of the policy and the application</label>
+        </div> 
+      
+        </div>
+            <br>
+            <br>
+            <br>
+        </ion-content>
+        <div class="bar bar-footer">
+            <div class="button-bar">
+                
+                <a class="button whiteFont" ng-click="buyNow();" style="border: none; background-color:#24385C ; line-height:3">Make Payment <i class="fa fa-angle-right nextIconForFooter" ></i></a>
+            </div>
+        </div>
+      </ion-view>

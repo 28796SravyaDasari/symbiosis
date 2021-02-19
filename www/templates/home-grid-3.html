@@ -1,0 +1,70 @@
+<ion-view title="Health">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    
+
+    <ion-content class="has-header" center text-center style="background-color:#FAFCFA;">
+        <h1 style="font-size:25px;font-family: 'Lato', sans-serif;" class="col center blue item-text-wrap">HOW CAN WE TAKE CARE OF YOU?</h1>
+        <br>
+        <br>
+        <br>
+        
+        <br>
+        
+        <center style="font-size:17px; color:#536992" class="col center blue item-text-wrap">Do you suffer from any pre- existing diseases?</center>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+           
+            <div class="col col-center">
+                <button ng-click="shoTextBox=false; next(true);" style=" -webkit-border-radius: 48;
+  -moz-border-radius: 48;
+  border-radius: 48px;
+  font-family: Arial;
+  color: #2d69b3;
+  font-size: 17px;
+  padding: 12px 90px 12px 90px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+                               background-color: Transparent;
+    background-repeat:no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
+        </div>
+        <div ng-if="shoTextBox" style="margin-left:40px">
+            <!--<div class="row" style="float:none;width:80%">
+                    Enter Car Registration Number
+                </div>
+               -->
+         
+            <div class="row">
+                <input type="text" placeholder="Enter Car Registration Number" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+        </div>
+        <br>
+         
+        
+         <div class="row">
+           
+            <div class="col col-center">
+                <button ng-click="shoTextBox=false; next(false)" style=" -webkit-border-radius: 48;
+  -moz-border-radius: 48;
+  border-radius: 48px;
+  font-family: Arial;
+  color: #2d69b3;
+  font-size: 17px;
+  padding: 12px 90px 12px 90px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+                               background-color: Transparent;
+    background-repeat:no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
+        </div>
+        
+<!--        <button class="btn1 btn-4 btn-4a" ng-click="shoTextBox=false; redirect('app.tellCarInfo')">No</button>-->
+        <!-- Do not delete below button it fixes some UI issue -->
+        <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+        <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    
+</ion-view>

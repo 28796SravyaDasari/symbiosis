@@ -1,0 +1,48 @@
+
+<div class="row center disease-member-mapper">
+    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+   
+    <div class="notIE">
+        <!-- <![endif]-->
+        <div ng-repeat="member in members">
+            <div class="member-insurer">
+                <span class="">{{member.insurer}}, {{member.age}}</span>    
+            </div>
+            
+            <!-- <select multiple>
+                <option ng-repeat="data in ddata">
+                    {{data}}
+                </option>
+                <option ng-repeat="data in ddata">
+                    {{data}}
+                </option>
+            </select> -->
+			<!--
+            <div class="inputBox displayInlineBlock"></div>
+            <ul class="displayInlineBlock">
+                <li ng-repeat="data in ddata">{{data}}</li>
+            </ul>
+			-->
+
+            <div class="displayInlineBlock diseaseMultiWidth"> 
+              <ui-select multiple ng-model="selectedDiseases" theme="bootstrap" close-on-select="false" style="" title="Choose a disease">
+                <ui-select-match placeholder="Select disease...">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="data in ddata | filter:$select.search">
+                    <!-- 
+                  <div ng-bind-html="person.name | highlight: $select.search"></div>
+                  <small>
+                    email: {{person.email}}
+                    age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                  </small>
+                    -->
+                    <span>{{data}}</span>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+
+            <!-- <span class="fancyArrowMark"></span> -->
+        </div>
+        <!--[if !IE]> -->
+    </div>
+    <!-- <![endif]-->
+</div>

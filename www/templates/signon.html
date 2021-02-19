@@ -1,0 +1,67 @@
+<ion-view hide-nav-bar="true">
+  
+    <br>
+    <br>
+    <br>
+    <ion-content center text-center style="background-color:#24385c;">
+        <br>
+        <br>
+        <h1 style="font-weight:boldest;font-size:70px;font-family: 'Lato', sans-serif;" class="col center white item-text-wrap">Symbo</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <div class="row">
+            <div class="col col-center">
+                <!--
+                <button style=" -webkit-border-radius: 48;
+  -moz-border-radius: 48;
+  border-radius: 48px;
+  font-family: Arial;
+  color: #2d69b3;
+  font-size: 17px;
+  padding: 12px 90px 12px 90px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+                               background-color: Transparent;
+    background-repeat:no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;</button>
+-->
+           
+                <input type="text" ng-model="userDetails.username" class="signontext" placeholder="Username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-center">
+
+                <input type="password" ng-model="userDetails.password" class="signontext" placeholder="Password">
+            </div>
+        </div>
+        <div ng-if="shoTextBox" style="margin-left:40px">
+            <!--<div class="row" style="float:none;width:80%">
+                    Enter Car Registration Number
+                </div>
+               -->
+            <div class="row">
+                <input type="text" placeholder="Enter Car Registration Number" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col col-center">
+                <button ng-click="shoTextBox=false; login();" class="signonbutton
+">&nbsp;&nbsp;SIGNIN&nbsp;&nbsp;</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-center">
+                <span class="signuphidden" ng-click="redirect('app.signup')">signup</span>
+            </div>
+        </div>
+        <!--        <button class="btn1 btn-4 btn-4a" ng-click="shoTextBox=false; redirect('app.tellCarInfo')">No</button>-->
+        <!-- Do not delete below button it fixes some UI issue -->
+        <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+        <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+</ion-view>

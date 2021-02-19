@@ -1,0 +1,99 @@
+<ion-view title="Health">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+  
+    <ion-content class="has-header" center style="background-color:#FAFCFA">
+      <div class="overlap-header-nom" style="font-size:12px"> 
+            <div class="leftfloat" >
+          <span class="imagetoppart">
+                   <img class="prod-imagein" width="122px" height="150px" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'BHARTIAXA_GENERAL'" src="https://www.symboinsurance.com/images/BhartiAxa.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'HDFC_ERGO'" src="https://www.symboinsurance.com/images/HDFCErgo.png" />
+                <img class="prod-imageine" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'RELIGARE_HEALTH'" src="https://www.symboinsurance.com/images/ReligareHealth.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'RELIANCE_GENERAL'" src="https://www.symboinsurance.com/images/RelianceGeneral.png" />
+                <img class="prod-imagein" width="122px" height="100%" style="padding-top: 10px;" ng-show="quoteData.insuranceProviderId === 'STARHEALTH'" src="https://www.symboinsurance.com/images/StarHealth.png" />
+                </span>
+            
+            </div>
+            
+            <div  style="float:left;font-size: 12px;">
+                <span><b> Coverage</b><br><i class="fa fa-inr" aria-hidden="true"></i> {{quoteData.sumInsured}}</span><br>
+                <span><b>Covered Members</b></span><br>
+                <span>{{quoteData.coveredMembers.length}}</span>
+            </div>
+            <div  style="top2part">
+                <span><b> Annual Premium</b><br><i class="fa fa-inr"></i> {{quoteData.totalAmount.amount}}</span><br>
+                <span><b>Policy Period</b></span><br>
+                
+                <span>1 year</span><br>
+            </div>
+            </div><br>
+        <h1 style="font-size:25px;font-family: 'Lato', sans-serif;" class="col center blue item-text-wrap"> {{ pageTitle }} </h1>
+        <div style="margin-left:40px">
+            <div>
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> First Name </span> </div>
+                <div class="row">
+                    <input type="text" ng-model="proposerDetails.firstName"  ng-class="{'errortb' : genInfoError.firstName.hasError}" firstcap placeholder="First Name" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+                <p style="color:red" ng-show="genInfoError.firstName.hasError">{{genInfoError.firstName.message}}</p>
+                <br />
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Last Name </span> </div>
+                <div class="row">
+                    <input type="text" ng-model="proposerDetails.lastName" placeholder="Last Name" ng-class="{'errortb' : genInfoError.lastName.hasError}" firstcap style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+                <p style="color:red" ng-show="genInfoError.lastName.hasError">{{genInfoError.lastName.message}}</p>
+                <br />
+                <div class="row">
+                <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback" style="width : 100%">
+                    <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
+                    <input type="text" ng-model="proposerDetails.dob" ng-class="{'errortb' : genInfoError.dob.hasError}" ng-disabled="true" placeholder="DOB" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div><br />
+                </ionic-datepicker>
+                 <p style="color:red" ng-show="genInfoError.dob.hasError">{{genInfoError.dob.message}}</p>
+                <div class="row center" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Occupation </span> </div>
+                <div class="row center">
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select ng-model="proposerDetails.occupation" ng-class="{'errortb' : genInfoError.occupation.hasError}" ng-options="item for item in occupationList">
+                        </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+                  <p style="color:red" ng-show="genInfoError.occupation.hasError">{{genInfoError.occupation.message}}</p>
+                <br />
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Height(cm) </span> </div>
+                <div class="row">
+                    <input type="text" ng-model="proposerDetails.height" ng-class="{'errortb' : genInfoError.height.hasError}" placeholder="Height(cm)" decimal style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+                 <p style="color:red" ng-show="genInfoError.height.hasError">{{genInfoError.height.message}}</p>
+                <br />
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> Weight(kg) </span> </div>
+                <div class="row">
+                    <input type="text" ng-model="proposerDetails.weight " ng-class="{'errortb' : genInfoError.weight.hasError}" placeholder="Weight(kg)" decimal style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+                <p style="color:red" ng-show="genInfoError.weight.hasError">{{genInfoError.weight.message}}</p>
+                <br>
+                <div class="row center">  
+                    <!--<style>
+.btnupdate{
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 21px;
+    background: #24385c;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;}
+                    </style>-->
+                    <!--<button class="btnupdate">Update</button>-->
+                    <br /> 
+
+                </div>
+
+        </div>
+        </div>
+        <!-- Do not delete below button it fixes some UI issue -->
+        <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+        <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    <div class="bar bar-footer" ng-click="next();">
+        <div class="title whiteFont">Next <i class="fa fa-angle-right nextIconForFooter"></i></div>
+    </div>
+</ion-view>

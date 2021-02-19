@@ -1,0 +1,61 @@
+<ion-view title="Health">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+   
+    <ion-content class="has-header" center style="background-color:#FAFCFA">
+        <h1 style="font-size:25px;font-family: 'Lato', sans-serif;" class="col center blue item-text-wrap"> {{ pageTitle }} </h1>
+        <div>
+            <div ng-repeat="member in members" class="familydiv">
+                <div class="" style="display: inline;"> <span style="font-size:17px; color:#536992"> {{ $index + 1 }} </span> </div>
+                <div class="" style="display: inline;">
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select ng-model="member.relationship" ng-focus="relationChange($index);" ng-options="item for item in member.relationshipList">
+                        </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+                <div class="" style="display: inline;"> <span style="font-size:17px; color:#536992">  is  </span> </div>
+                <div class="leftse15" style="display: inline; ">
+                    <span ng-click="removeMemberCard($index)" style="display:inline;"></span>
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select ng-model="member.age" ng-options="age for age in agesList | filterAges:member.relationship">
+                        <option style="display:none" value="">Select</option>
+                    </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+                <span ng-click="removeMemberCard($index)" style="display:inline; color:#24385c; font-size:20px"><i class="fa fa-times-circle-o"></i></span>
+                <div class="" ng-show="member.relationship == 'My father' || member.relationship == 'My mother'" style="margin: auto;width: 50%;">
+                    <!--<span style="font-size:17px; color:#536992"> Pincode </span> <br/>-->
+                    <input type="number" ng-model="member.pincode " only-digits ng-maxlength="6" ng-minlength="6" placeholder="Pincode" style="border-bottom-style:groove; border-width:1px; background-color:#FAFCFA">
+                </div>    
+                <div class="row" ng-show="member.relationship == 'My father' || member.relationship == 'My mother'"></div>
+                <br/>
+                
+                
+            </div>
+            <div class="row">
+
+                <div class="col col-center">
+                    <button ng-click="addMemberCard();" style=" -webkit-border-radius: 48;-moz-border-radius: 48;border-radius: 48px;font-family: Arial;color: #2d69b3;font-size: 17px;padding: 12px 90px 12px 90px;border: solid #1f628d 2px;text-decoration: none;
+                               background-color: Transparent;
+    background-repeat:no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;Add Member&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+        <!-- Do not delete below button it fixes some UI issue -->
+        <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+        <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    
+     <div class="bar bar-footer" ng-click="next();">
+        <div class="title whiteFont">Next <i class="fa fa-angle-right nextIconForFooter"></i></div>
+    </div>
+</ion-view>

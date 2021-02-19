@@ -1,0 +1,146 @@
+<ion-view title="Health List">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    
+    <ion-content class="has-header" overflow-scroll="true" center style="background-color:#FAFCFA">
+        <div class="overlap-header"> Agent: {{agentData.agent.name}} |  From: {{ agentData.from_date }} | To: {{ agentData.to_date }}
+            <button class="half-out-button" ui-sref="app.dashboard"> <i class="ion-edit"> </i> </button>
+        </div><br>
+        <p>
+            <style>
+                .item-profile {
+                    height: 150px;}
+  .item-avatar > img:first-child {
+    max-width: 100px;
+    max-height: 100px:                                        
+-webkit-border-radius: 100;
+  -moz-border-radius: 100;
+  border-radius: 100px;
+  }
+
+                .pending{
+                                        
+-webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #fffefc;
+  font-size: 10px;
+  background: #d9b034;
+  padding: 2px 11px 2px 10px;
+  text-decoration: none;
+                    color:#fff;
+                }
+                .info{
+                    -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #fffefc;
+  font-size: 10px;
+  background: #34a5d9;
+  padding: 2px 11px 2px 10px;
+  text-decoration: none;
+                    color:#fff;
+                }
+                .approved{
+                    
+                  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #fffefc;
+  font-size: 10px;
+  background: #4b8525;
+  padding: 2px 11px 2px 11px;
+  text-decoration: none;
+                    color:#fff;
+                }
+                .profile-info{
+                    padding: 0px;
+    width: 100%;
+    font-size: x-small;
+                }
+                  .row-info{
+                    padding: 0px;
+                }
+            </style>
+          
+                
+<!--                        <input type="text" placeholder="Pincode" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div><br />-->
+            <br>
+            <div class="list">
+
+                <a class="item item-thumbnail-left" ng-repeat="item in insuranceList" ui-sref="app.insuranceSummary({proposerId : item.proposer_id})">
+      <img src="https://cdn.psychologytoday.com/sites/default/files/blogs/46379/2014/07/155585-159667.gif">
+      <span class="pull-right approved" ng-show="item.responseStatus === 'APPROVED'" >{{item.responseStatus.toLowerCase()}}</span>
+      <span class="pull-right pending" ng-show="item.responseStatus === 'PENDING'" >{{item.responseStatus.toLowerCase()}}</span>
+      <span class="pull-right info" ng-show="item.responseStatus === 'POLICY ISSUED'" >{{item.responseStatus.toLowerCase()}}</span>
+      <h2>{{item.first_name}} {{item.last_name}}</h3>
+      <p><i class="fa fa-phone"></i>&nbsp; {{item.phone}}</p>
+        <hr>
+        <div class="profile-info">
+        <div class="row row-info">
+            <div class="col">Policy name</div>
+            <div class="col">Number of people</div>
+        </div>
+        <div class="row row-info">
+            <div class="col">{{ item.planName }}</div>
+            <div class="col">{{item.dependent_count}} People </div>
+        </div><button class="dashbutton" ui-sref="app.GenInfo">Make Payment</button>
+        </div>
+        
+    </a>
+
+   <!--<a class="item item-thumbnail-left" href="#">
+      <img src="https://cdn.psychologytoday.com/sites/default/files/blogs/46379/2014/07/155585-159667.gif">
+        <span class="pull-right pending" >pending</span>
+      <h2>Arjun Nayak</h2>
+        <p><i class="fa fa-phone"></i>&nbsp; 9870119876</p>
+        <hr>
+        <div class="profile-info">
+        <div class="row row-info">
+            <div class="col">Policy name</div>
+            <div class="col">Number of people</div>
+        </div>
+        <div class="row row-info">
+            <div class="col">Star Health Policy</div>
+            <div class="col">4 People </div>
+        </div><button class="dashbutton" ui-sref="app.GenInfo">Form Link</button>
+        </div>
+        
+    </a>      <a class="item item-thumbnail-left" href="#">
+      <img src="https://cdn.psychologytoday.com/sites/default/files/blogs/46379/2014/07/155585-159667.gif">
+        <span class="pull-right info" >policy issued</span>
+      <h2>Arjun Nayak</h2>
+        <p><i class="fa fa-phone"></i>&nbsp; 9870119876</p>
+        <hr>
+        <div class="profile-info">
+        <div class="row row-info">
+            <div class="col">Policy name</div>
+            <div class="col">Number of people</div>
+        </div>
+        <div class="row row-info">
+            <div class="col">Star Health Policy</div>
+            <div class="col">4 People </div>
+        </div>
+            <button class="dashbutton" ui-sref="app.GenInfo">Download Policy</button>
+        </div>
+        
+    </a>-->
+
+</div>
+       
+                    
+           
+   
+
+            <!-- Do not delete below button it fixes some UI issue -->
+            <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+            <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    
+<!--
+    <div class="bar bar-footer" ng-click="next();">
+        <div class="title whiteFont">Next <i class="fa fa-angle-right nextIconForFooter"></i></div>
+    </div>
+-->
+</ion-view>

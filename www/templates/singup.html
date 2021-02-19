@@ -1,0 +1,79 @@
+<ion-view title="Symbo" hide-nav-bar="true" style="background-color:#FAFCFA">
+    
+    <ion-content class="has-header" center style="background-color:#FAFCFA">
+        
+        <p>
+            <div style="margin-left:40px">
+        
+
+                <div class="row" style="float:none;width:80%"> 
+                    <span style="font-size:17px; color:#536992">Email</span> 
+                </div>
+                <div class="row">
+                    <input type="text" ng-model="userDetails.email" ng-class="{'errortb' : genInfoError.email.hasError}" style="border-bottom-style:groove; border-width:0.5px; width:80%; background-color:#FAFCFA"> 
+                </div>
+                  <p style="color:red" ng-show="genInfoError.email.hasError">{{genInfoError.email.message}}</p>
+                <br />
+                 
+                <div class="row" style="float:none;width:80%"> 
+                    <span style="font-size:17px; color:#536992">Mobile</span> 
+                </div>
+                <div class="row">
+                    <input type="number" ng-model="userDetails.phone" only-digits ng-maxlength="10" ng-minlength="10" ng-class="{'errortb' : genInfoError.phone.hasError}" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> 
+                </div>
+                 <p style="color:red" ng-show="genInfoError.phone.hasError">{{genInfoError.phone.message}}</p>
+                 <br />
+                
+                <div class="row" style="float:none;width:80%"> 
+                    <span style="font-size:17px; color:#536992"> Username</span> 
+                </div>
+                <div class="row">
+                    <input type="text" ng-model="userDetails.username" ng-class="{'errortb' : genInfoError.Username.hasError}" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> 
+                </div>
+                  <p style="color:red" ng-show="genInfoError.Username.hasError">{{genInfoError.Username.message}}</p>
+                 <br />
+                
+                <div class="row" style="float:none;width:80%"> 
+                    <span style="font-size:17px; color:#536992"> Password</span> 
+                </div>
+                <div class="row">
+
+                    <input type="password" ng-model="userDetails.password" ng-class="{'errortb' : genInfoError.password.hasError}" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> 
+
+                </div>
+                  <p style="color:red" ng-show="genInfoError.password.hasError">{{genInfoError.password.message}}</p>
+                 <br />
+
+                <div class="row" style="float:none;width:80%"> 
+                    <span style="font-size:17px; color:#536992"> Confirm Password</span> 
+                </div>
+                <div class="row">
+
+                    <input type="password" ng-model="userDetails.confirmPassword" ng-class="{'errortb' : genInfoError.confirmPassword.hasError}" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> 
+
+                </div>
+                  <p style="color:red" ng-show="genInfoError.confirmPassword.hasError">{{genInfoError.confirmPassword.message}}</p>
+
+                <br />
+                <br />
+        </div>
+<div>
+                 <button ng-click="shoTextBox=false; signup();" style=" -webkit-border-radius: 48;
+  -moz-border-radius: 48;
+  border-radius: 48px;
+  font-family: Arial;
+  color: #fff;
+  font-size: 17px;  
+  padding: 15px 100px 15px 100px;
+  border: solid #fff 2px;
+  text-decoration: none;
+                               background-color: #24385C;
+    background-repeat:no-repeat;">&nbsp;&nbsp;SIGN UP&nbsp;&nbsp;</button>
+
+            </div>
+            <!-- Do not delete below button it fixes some UI issue -->
+            <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+            <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+   
+</ion-view>

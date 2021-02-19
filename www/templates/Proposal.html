@@ -1,0 +1,192 @@
+<ion-view title="Symbo">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <style>
+            .scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.scroll {
+  display: table-cell;
+  text-align: center;
+}
+        
+        /* Portrait */
+@media only screen and (max-device-width: 667px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    
+        }
+
+/*        Errortab*/
+        .errortab{background:#f6ebbb;
+                color:#24385c; -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  color: #2d69b3;                   
+  font-size: 14px;
+  width:350px;
+padding: 10px 10px 10px 10px;}
+/*        Errortab*/
+/*    Start    DROPDOWN*/
+        .notIE {
+            position: relative;
+            display: inline-block;
+        }
+        
+        select {
+            display: inline-block;
+            height: 40px;
+            width: 300px;
+            padding: 2px 10px 2px 2px;
+            outline: none;
+            border-radius: 4px;
+        }
+        /* Select arrow styling */
+        
+        .notIE .fancyArrow {
+            width: 40px;
+            height: 37px;
+            position: absolute;
+            display: inline-block;
+            top: 1px;
+            right: 2px;
+            bottom: 1px;
+            background: url(http://studbud.in/imagess/dropdown.png) right / 90% no-repeat #fff;
+            pointer-events: none;
+        }
+        /*target Internet Explorer 9 and Internet Explorer 10:*/
+        
+        @media screen and (min-width:0\0) {
+            .notIE .fancyArrow {
+                display: none;
+            }
+        }
+        
+     /*    End    DROPDOWN*/
+        
+/*    start    HALF ICON THINGY*/
+        .overlap-header {
+            
+            text-align: left;
+            background: #dadada;
+            color: #24385c;
+            position: relative;
+            width:100%
+        }
+        
+        
+        
+/*    end    HALF ICON THINGY*/
+        
+        
+    </style>
+    <ion-content class="has-header" center style="background-color:#FAFCFA">
+        <div class="overlap-header"> 
+            
+<!--
+                  <div class="row">
+<div class="col"><img src="https://www.symboinsurance.com/images/HDFCErgo.png"></div>
+  <div class="col col-top">Coverage<br>3,00,000</div>
+  <div class="col col-top">Annual Premium<br>3,00,000</div>
+            </div><div class="row">
+            <div class="col"></div>
+  <div class="col col-top">Covered Members<br>1 Adult, 2 Children</div>
+  <div class="col col-top">Policy Period<br>1 year</div>
+  
+</div>
+-->
+<!--
+            
+            <ion-item>
+    <div class="row">
+        <div class="col col-33 no-padding">
+            <div class="col no-padding">
+               <img src="https://www.symboinsurance.com/images/HDFCErgo.png" class="spot-tall"> 
+
+            </div>
+        </div>
+        <div class="col col-66 no-padding">
+            <div>
+                <div class="spot-wide"><div>Coverage<br>3,00,000 &nbsp; Coverage<br>3,00,000</div></div>
+            </div>
+            <div>
+                <div class="spot-wide">Covered Members<br>1 Adult, 2 Children</div>
+            </div>
+        </div>
+    </div>
+</ion-item>
+-->
+            <div style="float:left;">
+            <span><img width="122px" style="padding-top: 10px;" src="https://www.symboinsurance.com/images/HDFCErgo.png" height="100%"></span>
+            
+            </div>
+            
+            <div  style="float:left;font-size: 14px;">
+                <span> Coverage<br>3,00,000</span><br>
+                <span>Covered Members</span><br>
+                <span>1 Adult 1 Child</span>
+            </div>
+            <div  style="float:left;margin-left: 38px;font-size: 14px;">
+                <span> Annual Premium<br>3000</span><br>
+                <span>Policy Period</span><br>
+                
+                <span>1 year</span><br>
+            </div>
+            
+<!--
+        <table>
+            <tr>
+                <th style="width: 25%;" rowspan="3"><img src="https://www.symboinsurance.com/images/HDFCErgo.png" height="100%"></th>
+                <th style="float: left;">Coverage<br>3,00,000</th>
+                <th style="float: left;">Annual Premium<br>3000</th>
+            </tr>
+            <tr>
+               
+                <th  style="float: left;">Covered Members</th>
+                <th style="float: left;">Policy Period</th>
+            </tr>
+            <tr>
+                
+                <td style="float: left;">1 Adult</td>
+                <td  style="float: left;">1 year</td>
+            </tr>
+
+        </table>
+-->
+            
+        </div>
+        <p>
+            <h1 style="font-size:25px;font-family: 'Lato', sans-serif;" class="col center blue item-text-wrap">HOW CAN WE TAKE CARE OF YOU?</h1>
+            <div style="margin-left:40px">
+                <div class="row center" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> I'd Like to Insure</span> </div>
+                <div class="row center">
+                    <!--                <input type="text" placeholder="Select" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> -->
+                    <div class="notIE">
+                        <!-- <![endif]--><span class="fancyArrow"></span>
+                        <select>
+                            <option>Myself</option>
+                            <option selected>My Family</option>
+                            <option>Myself and My Family</option>
+                        </select>
+                        <!--[if !IE]> -->
+                    </div>
+                    <!-- <![endif]-->
+                </div>
+                <br />
+                <br />
+                <div class="errortab">Sorry, there are no quotes currently avaliable </div>
+                <br />
+                <div class="row" style="float:none;width:80%"> <span style="font-size:17px; color:#536992"> My Pincode is</span> </div>
+                <div class="row">
+                    <input type="text" placeholder="Pincode" style="border-bottom-style:groove; border-width:1px; width:80%; background-color:#FAFCFA"> </div>
+                <br /> </div>
+            <!-- Do not delete below button it fixes some UI issue -->
+            <button class="btn btn-4 btn-4a" style="visibility:hidden">12</button>
+            <!-- Do not delete below button it fixes some UI issue -->
+    </ion-content>
+    <div class="bar bar-footer">
+        <div class="title whiteFont">Next <i class="fa fa-angle-right nextIconForFooter"></i></div>
+    </div>
+</ion-view>
